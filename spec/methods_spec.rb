@@ -1,6 +1,11 @@
 require_relative 'spec_helper'
 require_relative '../methods'
 
+
+def greet_programmer
+  puts "Hello, programmer!"
+end
+
 describe '#greet_programmer' do
 
   it 'outputs the string "Hello, programmer!"' do
@@ -8,6 +13,11 @@ describe '#greet_programmer' do
   end
   
 end
+
+def greet(name)
+  puts "Hello, #{name}!"
+end
+greet("Naureen")
 
 describe '#greet' do
 
@@ -21,6 +31,13 @@ describe '#greet' do
 
 end
 
+
+def greet_with_default(name = "programmer")
+  puts "Hello, #{name}!"
+end
+greet_with_default("Naureen")
+
+
 describe '#greet_with_default' do
 
   it 'outputs a string "Hello, Naureen!" when called with "Naureen"' do
@@ -33,6 +50,13 @@ describe '#greet_with_default' do
 
 end
 
+def add(num1, num2)
+  num1 + num2
+end
+
+add(1, 1)
+
+
 describe '#add' do
 
   it 'returns the sum of two numbers' do
@@ -40,6 +64,15 @@ describe '#add' do
   end
 
 end
+
+def halve(num1)
+  if num1.class != Integer
+    return nil
+  end
+  num1 / 2
+end
+
+halve(2)
 
 describe '#halve' do
   
